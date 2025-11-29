@@ -17,7 +17,7 @@ app.initialize().then(() => {
     server.listen(process.env.PORT ?? 3000, () => {
         console.log(`running in http://localhost:${process.env.PORT ?? 3000}`)
     })
-}).then(() => console.log("error at connect to database"))
+}).catch(() => console.log("error at connect to database"))
 
 
 

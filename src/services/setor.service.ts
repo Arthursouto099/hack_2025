@@ -17,7 +17,7 @@ export class SetorService {
 
     public async findByTarget<T extends keyof Setor>(params?: {target: T, value: Setor[T]}) {
         try {
-            if(!params) return await this.repo.find()
+            if(!params) return await this.repo.find({relations: ['leitos']})
 
             const {target, value} = params
             return await this.repo.find({ where: {[target]: value}, relations: ["leitos"] })
