@@ -12,5 +12,6 @@ export class Leito {
     setor: Setor
 
     @OneToOne(() => Usuario)
+    @JoinColumn()
     usuario: Usuario 
 }

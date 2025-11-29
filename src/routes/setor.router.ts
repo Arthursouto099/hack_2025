@@ -7,7 +7,7 @@ const router = Router()
 router.post("/", SetorControllerIstance.create)
 router.get("/", SetorControllerIstance.findBy)
 router.put("/:id_setor", SetorControllerIstance.update)
-router.delete("/:id", SetorControllerIstance.delete)
+router.delete("/:id_setor", SetorControllerIstance.delete)
 
 
 export {
