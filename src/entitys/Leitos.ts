@@ -11,7 +11,6 @@ export class Leito {
     @ManyToOne(() => Setor, (setor) => setor.leitos, {onDelete: "CASCADE"})
     setor: Setor
 
-
-    @ManyToOne(() => Usuario, (usuario) => usuario.leitos, {onDelete: "CASCADE"})
+    @ManyToOne(() => Usuario, (usuario) => usuario.leito, {onDelete: "CASCADE"})
     usuario: Usuario 
 }

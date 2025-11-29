@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Leito } from "./Leitos";
 
 
@@ -16,6 +16,6 @@ export class Usuario {
     @Column()
     senha: string
 
-    @OneToMany(() => Leito, (leito) => leito.usuario) 
-    leitos: Leito[] 
+    @OneToOne(() => Leito, (leito) => leito.usuario) 
+    leito: Leito
 }
