@@ -1,4 +1,4 @@
-import { Entity, JoinColumn, JoinTable, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, JoinColumn, JoinTable, ManyToOne, OneToMany, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Setor } from "./Setores";
 import { Usuario } from "./Usuarios";
 
@@ -11,6 +11,6 @@ export class Leito {
     @ManyToOne(() => Setor, (setor) => setor.leitos, {onDelete: "CASCADE"})
     setor: Setor
 
-    @ManyToOne(() => Usuario, (usuario) => usuario.leito, {onDelete: "CASCADE"})
+    @OneToOne(() => Usuario)
     usuario: Usuario 
 }
