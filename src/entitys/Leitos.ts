@@ -8,10 +8,10 @@ export class Leito {
     @PrimaryGeneratedColumn('uuid')
     id_leito: string
     
-    @ManyToOne(() => Setor, (setor) => setor.id_setor)
+    @ManyToOne(() => Setor, (setor) => setor.leitos, {onDelete: "CASCADE"})
     setor: Setor
 
 
-    @ManyToOne(() => Usuario, (usuario) => usuario.id_usuario)
-    usuario: Usuario
+    @ManyToOne(() => Usuario, (usuario) => usuario.leitos, {onDelete: "CASCADE"})
+    usuario: Usuario 
 }

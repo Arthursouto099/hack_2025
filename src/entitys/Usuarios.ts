@@ -1,11 +1,10 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
-import { v4 as uuid} from "uuid"
+import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Leito } from "./Leitos";
 
 
 @Entity()
 export class Usuario {
-    @PrimaryColumn({default: uuid()})
+    @PrimaryGeneratedColumn('uuid')
     id_usuario: string
     
     @Column({unique: true, length: 11})
@@ -18,5 +17,5 @@ export class Usuario {
     senha: string
 
     @OneToMany(() => Leito, (leito) => leito.usuario) 
-    leitos: Leito[]
+    leitos: Leito[] 
 }

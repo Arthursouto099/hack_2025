@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Leito } from "./Leitos";
 
 export enum SetorEnum {
@@ -13,8 +13,12 @@ export enum SetorEnum {
 
 @Entity()
 export class Setor {
-    @PrimaryColumn('uuid')
+    @PrimaryGeneratedColumn('uuid')
     id_setor: string
+
+
+    @Column({default: "SETOR"})
+    nome_setor: string
 
     @Column({
         type: "enum",

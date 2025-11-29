@@ -2,11 +2,13 @@ import express, { urlencoded } from "express"
 import "reflect-metadata"
 import "dotenv/config"
 import { AppDataSource as app } from "./src/data-source"
+import router from "./src/routes/router"
 
 const server = express()
 
 
 server.use(express.json())
+server.use(router)
 server.use(urlencoded({ extended: true }))
 
 
